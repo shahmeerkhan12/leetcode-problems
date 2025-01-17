@@ -1,5 +1,8 @@
 class solution:
 
+# the brute-force technique
+# complexity O(n)^2
+
    def two_sum(self,nums,targt):
      
       found = False
