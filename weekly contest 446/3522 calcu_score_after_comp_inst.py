@@ -2,23 +2,25 @@ class program:
    def cal_score(self,inst,values):
       
       visited = set()
+      n = len(inst)
       score = 0
-      
-      for i in inst:
-         if i not in visited:
-            if inst[i]=="add":
+      i=0
+       
+      while (0 <= i < n and i not in visited):  
+            visited.add(i)
+            if(inst[i]=='add'): 
                score += values[i]
-               i+1
-               visited.add(i)
+               i += 1
+            elif (inst[i]=='jump'):
+               i = i + values[i]
             else:
-               i += values[i]
-               visited.add(i)
+               print("invalid instruction")
+               break
       return score
         
-instruction = ["add","add","jump","add","jump"]
-value = [1,2,-1,2,-2,8]
+instruction = ["add","add","add","add","jump"]
+value = [1,2,4,3,3]
 p1 = program()
-# print the return value
-result = p1.cal_score(instruction,value)
+print(p1.cal_score(instruction,value))
 
 
