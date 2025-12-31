@@ -1,63 +1,44 @@
-# Definition for singly-linked list.
-
-# class Solution(object):
-#     def mergeTwoLists(self, list1, list2):
-#         """
-#         :type list1: Optional[ListNode]
-#         :type list2: Optional[ListNode]
-#         :rtype: Optional[ListNode]
-#         """
-#         head = ListNode(0)
-#         current = head
-        
-#         while list1 and list2:
-#             if list1.val < list2.val:
-#                 current.next = list1
-#                 list1 = list1.next
-#             else:
-#                 current.next = list2
-#                 list2 = list2.next
-#             current = current.next
-#         current.next  = list1 or list2
-
-#         return head.next
-
-
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-# create a linked list
-n1 = ListNode(2)
-n2 = ListNode(4)
-n3 = ListNode(1)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+# creating nodes
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node1.next = node2
+node2.next = node3
+list1 = node1
+# create another linked List
+n1 = Node(2)
+n2 = Node(3)
+n3 = Node(4)
 n1.next = n2
 n2.next = n3
-n3.next = None
-
-# traversing linked list ITERATIVELY
-head = n1
+list2 = n1
+#create an empty head node
+head = Node(0)
 current = head
-# while current:
-#     print(current.val, end = " -> ")
-#     current = current.next
-
-# traversing by recursion
-def recursion_(head):
+# print(head)
+# merging two list
+while list1 and list2:
     
-    # if head is None
-    if head is None:
-        return
+    if list1.data < list2.data:
+        current.next = list1
+        list1 = list1.next
+    else:
+        current.next = list2
+        list2 = list2.next
     
-    # print the node data
-    print(head.val, end='')
+    current = current.next
+    
+current.next = list1 or list2
 
-    #lets print some arrows too
-    if head.next is not None:
-        print(" -> ", end= " ")
-
-    # make a reursive call with head.next
-    recursion_(head.next)
+while head.next:
+    head = head.next
+    print(head.data, end=' ')
+    
 
 
-recursion_(head)
+
+
