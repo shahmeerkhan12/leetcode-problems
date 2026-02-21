@@ -1,0 +1,6 @@
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        bi = bin(n)
+        if bi[2:].count("1")==1 and bi[2:].startswith('1'):
+            return True
+        return False 
