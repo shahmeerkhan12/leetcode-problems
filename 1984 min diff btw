@@ -1,0 +1,16 @@
+class Solution:
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        
+        # store something bigger
+        min_dif = float("inf")
+        nums.sort()
+        for i in range(len(nums) - k + 1):
+
+            # find difference and compare with the min_diff
+
+            diff = nums[i+k-1]-nums[i]
+
+            if diff < min_dif:
+                min_dif = diff
+
+        return min_dif
