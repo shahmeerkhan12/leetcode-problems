@@ -1,0 +1,17 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
+        # create a result list
+        res = []
+
+        # create a copy of num2
+        copy_num2 = nums2
+
+        # use brute force to find common elements
+
+        for common in nums1:
+            if common  in copy_num2:
+                res.append(common)
+                copy_num2.remove(common)
+        
+        return res
