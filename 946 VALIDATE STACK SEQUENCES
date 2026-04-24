@@ -1,0 +1,31 @@
+class stk:
+    def __init__(self,pushed, popped):
+        self.q1 = deque(self.q1)
+        self.q2 = deque(self.q2)
+        self.stk = []
+
+    def validate_seq(self):  
+            while self.q1:
+                 
+                element = self.q1.popleft()
+
+                if element == self.q2[0]:
+                      
+                      self.q2.popleft()
+
+                      while self.q2 and self.stk and self.q1[-1] == self.q2[0]:
+                           
+                           self.stk.pop()
+
+                           self.q2.popleft()
+                
+                else:
+                     self.stk.append(element)
+
+            return not self.stk
+        
+
+a = [1,2,3,4,5]
+b = [4,5,3,2,1]
+stk1 = stk(a,b)
+print(stk1.validate_seq)
