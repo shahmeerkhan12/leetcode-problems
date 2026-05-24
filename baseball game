@@ -1,0 +1,22 @@
+class Solution(object):
+    def calPoints(self, operations):
+        """
+        :type operations: List[str]
+        :rtype: int
+        """
+        records = []
+
+        for i in operations:
+
+            if i == "+":
+                records.append(records[-1]+records[-2])
+            elif i=="D":
+                records.append(records[-1]*2)
+            elif i=="C":
+                records.pop()
+            else:
+                records.append(int(i))
+
+        return sum(records)
+
+        
