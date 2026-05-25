@@ -22,13 +22,8 @@ The solutions are organized by difficulty and topic:
 
 ## 📊 Progress Tracker
 
+![LeetCode Stats](https://herokuapp.com/shahmir6990)
 
-| Difficulty | Solved | Target | Progress |
-| :--- | :---: | :---: | :---: |
-| 🟢 Easy | 0 | 100 | `░░░░░░░░░░ 0%` |
-| 🟡 Medium | 0 | 150 | `░░░░░░░░░░ 0%` |
-| 🔴 Hard | 0 | 50 | `░░░░░░░░░░ 0%` |
-| **Total** | **0** | **300** | **0%** |
 
 ## 🛠️ Languages Used
 * **Python** 🐍 (Primary language for clean syntax and rapid prototyping)
