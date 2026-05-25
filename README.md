@@ -22,7 +22,7 @@ The solutions are organized by difficulty and topic:
 
 ## 📊 Progress Tracker
 
-![LeetCode Stats](https://herokuapp.com/shahmir6990)
+<img>[![LeetCode Stats](https://leetcode-stats-six.vercel.app/api/username=shahmir6990)](https://github.com/JacobLinCool/LeetCode-Stats-Card)</img>
 
 
 ## 🛠️ Languages Used
