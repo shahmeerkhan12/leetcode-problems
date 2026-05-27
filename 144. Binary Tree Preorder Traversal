@@ -1,0 +1,24 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: List[int]
+        """
+        def traverse_preorder(temp):
+            
+            if not temp:
+                return
+            res.append(temp.val)
+            traverse_preorder(temp.left)
+            traverse_preorder(temp.right)
+        
+        res = []
+        traverse_preorder(root) 
+    
+        return res
