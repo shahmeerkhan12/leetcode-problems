@@ -1,0 +1,36 @@
+import heapq
+class Solution(object):
+    def lastStoneWeight(self, stones):
+        """
+        :type stones: List[int]
+        :rtype: int
+        """
+
+        # convert stones into a max heap(complete bina tree)
+
+        # first turn all values into negative values
+        max_heap = [-stone for stone in stones]
+        # now convert
+        heapq.heapify(max_heap)
+
+        # do this until the len of max_heap is 1
+
+        while len(max_heap)>1:
+
+            y = heapq.heappop(max_heap) 
+            x = heapq.heappop(max_heap) 
+            
+
+            # now follow the game instructions
+       
+        # 1. the condition if x==y, is done implicitly
+
+        # 2. then implement if x!=y
+
+            if x!=y:
+
+                heapq.heappush(max_heap, y-x)
+
+    # 3. now return the last remaining element if exist else return 0
+
+        return -max_heap[0] if max_heap else 0
