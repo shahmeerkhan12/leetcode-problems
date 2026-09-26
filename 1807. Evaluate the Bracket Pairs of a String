@@ -1,0 +1,39 @@
+class Solution(object):
+    def evaluate(self, s, knowledge):
+        """
+        :type s: str
+        :type knowledge: List[List[str]]
+        :rtype: str
+        """
+        
+        dict_key = {k:v for k,v in knowledge}
+
+        result = []
+        i = 0
+        n = len(s)
+
+        while i < n:
+            
+            if s[i] == '(':
+# we want the key inside the brackets
+                j = i + 1
+
+                while j < n and s[j] != ')':
+                    
+                    j += 1
+
+                # bracket closed and we found the key
+
+                key = s[i+1:j] # as j is exclusive
+
+                result.append(dict_key.get(key,"?"))
+
+                i = j+1
+
+
+            else:
+
+                result.append(s[i])
+                i += 1
+
+        return "".join(result)
