@@ -1,0 +1,35 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        count = Counter(nums)
+        
+        # Step 2: Push elements onto a min-heap based on frequency
+        min_heap = []
+        for num, freq in count.items():
+            # Python's heapq is a min-heap. We push tuples where frequency is first.
+            heapq.heappush(min_heap, (freq, num))
+            
+            # If the heap size exceeds k, remove the element with the lowest frequency
+            if len(min_heap) > k:
+                heapq.heappop(min_heap)
+                
+        # Step 3: Extract the elements from the heap
+        return [num for freq, num in min_heap]        
+        # dict_count = {}
+        
+        # for i in nums:
+            
+        #     if nums[i] in dict_count:
+        #         dict_count[nums[i]] += 1
+        #     else:
+
+        #         key = nums[i]
+        #         dict_count[key] = Counter(nums[i])
+
+
+        # result = []
+
